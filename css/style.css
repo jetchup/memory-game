@@ -1,0 +1,149 @@
+/* ------- Start minireset stylesheet owned by jamesperet ------- */
+
+/* CSS Mini Reset */
+
+html, body, div, form, fieldset, legend, label
+{
+margin: 0;
+padding: 0;
+}
+p
+{
+  margin: 0;
+  padding: 0;
+}
+
+table
+{
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+th, td
+{
+text-align: left;
+vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6, th, td, caption
+{
+font-weight:normal;
+margin: 0;
+padding: 0;
+}
+
+img { border: 0; }
+
+/* ------- End minireset ------- */
+html {
+  height: 100%;
+}
+body {
+  background-color: #91ffd3;
+  background: linear-gradient(to right, #91ffd3, #fcef02);
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+h1{
+
+  font-family: Monofett, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #73d1ab;
+  font-size: 3em;
+}
+
+/* This is the place where scores are kept */
+.container {
+  background-color: #ffffff;
+  color: #00d37e;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  box-shadow: 1px 1px 18px #b7b7b7;
+}
+p.seconds {
+  font-size: 1em;
+  padding-left: 10px;
+}
+.stars {
+  margin-right: 10px;
+}
+.game-info {
+  margin: 2em auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  max-width: 440px;
+  justify-content: space-between;
+}
+
+/* Now we begin the cards section */
+.card-deck {
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 440px;
+  height: 100%;
+  justify-content: center;
+}
+.card-deck li {
+  list-style-type: none;
+  background-color: #ffffff;
+  width: 100px;
+  height: 100px;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  text-align: center;
+  line-height: 100px;
+  color: #ffffff;
+  font-size: 2em;
+}
+
+.match {
+  animation: expand 1s ease-in-out 1;
+}
+@keyframes expand {
+	0% {
+    font-size: 2em;
+	}
+	50% {
+    font-size: 3em;
+	}
+	100% {
+    font-size: 2em;
+	}
+}
+
+/* ------- Modal from w3schools.org ------- */
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    color:  #00d37e;
+}
+.modal-content .stars {
+  margin-top: 1em;
+}
+/* The Close Button */
+.fa-window-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}

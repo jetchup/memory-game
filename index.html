@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Memory Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Monofett" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1>Memory <br>Game</h1>
+    <section class="game-info">
+      <p class="seconds">0 seconds</p>
+      <p class="fas fa-undo"></p>
+      <section class="stars">
+        <p><span class="moves">0</span> moves</p>
+        <p id="star-1" class="fas fa-star"></p>
+        <p id="star-2" class="fas fa-star"></p>
+        <p id="star-3" class="fas fa-star"></p>
+      </section>
+    </section>
+  </div>
+
+  <main>
+    <ul class="card-deck">
+      <li id="1" class="fas fa-anchor"></li>
+      <li id="2" class="fas fa-cog"></li>
+      <li id="3" class="fas fa-ambulance"></li>
+      <li id="4" class="fas fa-bicycle"></li>
+      <li id="5" class="fas fa-anchor"></li>
+      <li id="6" class="fas fa-cog"></li>
+      <li id="7" class="fas fa-ambulance"> </li>
+      <li id="8" class="fas fa-bicycle"></li>
+    </ul>
+  </main>
+  <div id="modal">
+    <div class="modal-content">
+      <span class="fa fa-window-close" aria-hidden="true"></span>
+      <p>Text Here </p>
+      <div class="final-stars">Star rating</div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
