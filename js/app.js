@@ -58,10 +58,15 @@ list.addEventListener("click", clickedCard);
 
 
 
+// ------- Here we will compare 2 cards that have been turned -------
+let cardsTurned = [];
+let cardsId = [];
+
+
 // ------- Start counting player's moves -------
 let moves = 0;
 function addMoves(){
-  moves ++;
+    moves ++;
 
   //We add up the click to our moves counter
   document.querySelector("span.moves").innerHTML = moves;
@@ -75,41 +80,37 @@ function addMoves(){
    //When to substract the star
    if (moves === 13){
      substractStar(1);
-   }else if (moves == 17) {
+   }else if (moves == 22) {
      substractStar(2);
-   }else if (moves === 20) {
-     substractStar(3);
    }
-
 }
-
-
-  // ------- Here we compare 2 cards that have been turned -------
-let cardsTurned = [];
-let cardsId = [];
 
 
 
 // ------- We click the cards to turn them -------
 function clickedCard(event){
-
-  // Add the click to the moves counter
-  addMoves();
   if(event.target && event.target.nodeName == "LI") {
-    if (event.target.classList.length === 3){
-      event.target.classList.remove("match");
-    }
+    event.target.addEventListener("click", clickedCard);
     // Turning the cards is just changing the background color to reveal the hidden text
     event.target.style.backgroundColor= "#00d37e";
     const cardClass = event.target.className;
     const cardId = event.target.id;
 
-    // The selected card is added to cardsTurned and cardId for comparison
-    cardsTurned.push(cardClass);
-    cardsId.push(cardId);
-    checkingTurned();
+    // If no other card in cardId has the same id as the event.target,
+    //we add event.target's id to the array.
+    if (cardsId.includes(cardId) || event.target.classList.length === 3){
+      true;
+    } else {
+      // Add the click to the moves counter
+      addMoves();
+      cardsTurned.push(cardClass);
+      cardsId.push(cardId);
+      checkingTurned();
     }
   }
+}
+
+
 
 function checkingTurned(){
   if (cardsTurned.length === 2){
@@ -156,7 +157,7 @@ function gameOver(){
   for (i of cardToCheck){
     if (i.hasAttribute("style") && i.attributes.style.value === "background-color: rgb(0, 211, 126);") {
         turnedCards.push(i);
-    } if (turnedCards.length === 8) {
+    } if (turnedCards.length === 16) {
       // Stop cards from being clickable
         list.removeEventListener("click", clickedCard);
       //update modal content, open modal
