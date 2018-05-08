@@ -136,9 +136,22 @@ p.seconds {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
     color:  #00d37e;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .modal-content .stars {
   margin-top: 1em;
+}
+.modal-content .fa-undo{
+  width: 25px;
+  height: 25px;
+  background-color: rgb(0, 211, 126);
+  color: white;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 5px;
 }
 /* The Close Button */
 .fa-window-close {

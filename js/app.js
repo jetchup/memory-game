@@ -29,8 +29,11 @@ shuffle( document.getElementsByTagName('li') );
 
 
 // ------- Create reload button -------
-const reloadButton = document.querySelector(".fa-undo");
-reloadButton.addEventListener("click", reload);
+let reloadButton = document.querySelectorAll(".fa-undo");
+reloadButton.forEach(function(element){
+  element.addEventListener("click", reload);
+})
+
 
 function reload(){
   window.location.reload();
@@ -78,9 +81,9 @@ function addMoves(){
    }
 
    //When to substract the star
-   if (moves === 13){
+   if (moves === 22){
      substractStar(1);
-   }else if (moves == 22) {
+   }else if (moves == 44) {
      substractStar(2);
    }
 }
@@ -96,13 +99,15 @@ function clickedCard(event){
     const cardClass = event.target.className;
     const cardId = event.target.id;
 
-    // If no other card in cardId has the same id as the event.target,
-    //we add event.target's id to the array.
+    /* If no other card in cardId has the same id as the event.target,
+    we add event.target's id to the array.
+     Also, if a card has a match, we take from it the possibility of being played again. */
     if (cardsId.includes(cardId) || event.target.classList.length === 3){
       true;
     } else {
       // Add the click to the moves counter
       addMoves();
+      // Check for potential matches
       cardsTurned.push(cardClass);
       cardsId.push(cardId);
       checkingTurned();
@@ -185,11 +190,12 @@ function openModal() {
 //Modal content written by me
 
 function changeText() {
-  let modalText = document.querySelector(".modal-content p");
-  let starRating = document.querySelector(".modal-content div");
-  modalText.innerHTML = "You won in: " + document.querySelector("p.seconds").innerHTML;
-  starRating.innerHTML = document.querySelector("section.stars").outerHTML;
-  document.querySelector(".final-stars p").textContent = "";
+  const modalText = document.querySelector(".modal-content p");
+  const starRating = document.querySelector(".modal-content .final-stars");
+  modalText.innerHTML = "You won in: " + "\n" + document.querySelector("p.seconds").innerHTML;
+  starRating.innerHTML = document.querySelector(".stars").innerHTML;
+  //document.querySelector(".modal-content .moves").textContent = "";
+
 }
 
 
@@ -203,4 +209,3 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
