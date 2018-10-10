@@ -1,5 +1,5 @@
 
-** Memory Game **
+## Memory Game
 
 This is a typical memory game. You have to find pairs of cards, and remember the location of the cards that don't match. When you find all of the pairs, you win the game.
 
