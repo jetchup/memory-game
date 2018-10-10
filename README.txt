@@ -2,6 +2,8 @@
 ** Memory Game **
 
 This is a typical memory game. You have to find pairs of cards, and remember the location of the cards that don't match. When you find all of the pairs, you win the game.
+
+To play, clone the repository and open the index.html file on your browser.
 -----------------
 
 The HTML is divided in two main parts: 
